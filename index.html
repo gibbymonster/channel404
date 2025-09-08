@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Channel 404</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="logo">
+  <img src="404.png" alt="Channel 404 Logo">
+</div>
+
+<nav class="nav-bar">
+  <a href="#" onclick="showContent('live')">LIVE</a>
+  <a href="#" onclick="showContent('clips')">CLIPS</a>
+  <a href="#" onclick="showContent('about')">ABOUT</a>
+</nav>
+
+<div id="content">
+  <div id="live" class="page-section">
+    <iframe src="https://player.kick.com/channel404" width="900" height="500" frameborder="0" allowfullscreen></iframe>
+    <p class="subtitle">CHAOS STREAMING LIVE ⚡</p>
+  </div>
+
+  <div id="clips" class="page-section" style="display:none;">
+    <h2>RECENT CLIPS</h2>
+    <div class="clips-container">
+      <div class="clip">CLIP 1</div>
+      <div class="clip">CLIP 2</div>
+      <div class="clip">CLIP 3</div>
+      <div class="clip">CLIP 4</div>
+    </div>
+  </div>
+
+  <div id="about" class="page-section" style="display:none;">
+    <h2>ABOUT CHANNEL 404</h2>
+    <p>this is gibby chaos, nothing makes sense, everything is chaotic, welcome to the madness</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 CHANNEL 404 - CHAOS BABY</p>
+</footer>
+
+<script>
+function showContent(section) {
+  document.querySelectorAll('.page-section').forEach(s => s.style.display = 'none');
+  document.getElementById(section).style.display = 'block';
+
+  // random shake on content to look chaotic
+  let el = document.getElementById(section);
+  el.style.position = 'relative';
+  el.animate([
+    {transform: 'translate(0px,0px)'},
+    {transform: 'translate(5px,-3px)'},
+    {transform: 'translate(-4px,4px)'},
+    {transform: 'translate(3px,-2px)'},
+    {transform: 'translate(0px,0px)'}
+  ], {duration: 200, iterations: 1});
+}
+</script>
+
+</body>
+</html>
